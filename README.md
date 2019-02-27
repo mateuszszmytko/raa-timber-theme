@@ -1,5 +1,5 @@
-#Raa Timber Theme
+Raa Timber Theme
 ===
 
 Starter wordpress theme for developers.
-//todo - make readme
+//todo readme
