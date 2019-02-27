@@ -1,0 +1,39 @@
+{
+  "name": "@raa/timber-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@karrot/common": "0.5.0",
+    "@karrot/core": "0.5.0",
+    "@raa/style-base": "^1.0.1",
+    "es6-shim": "^0.35.4",
+    "ts-loader": "^5.3.3",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "browser-sync": "^2.24.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "typescript": "^3.0.3",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.0",
+    "webpack-cli": "^3.1.1",
+    "webpack-merge": "^4.1.4"
+  },
+  "scripts": {
+    "start": "npm run watch",
+    "build": "webpack --config ./config/webpack.prod.js",
+    "watch": "webpack --config ./config/webpack.dev.js"
+  },
+  "author": "Mateusz (@Raa) Szmytko",
+  "license": "ISC"
+}

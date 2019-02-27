@@ -1,0 +1,52 @@
+$colors: (
+    primary: #111,
+    secondary: #f48566,
+    error: #f00,
+    background: #fff,
+
+    heading: #111,
+    text: #111,
+    link: #111,
+    link-hover: #111
+);
+
+$breakpoints: ( 
+    xs: 0, 
+    sm: 576px, 
+    md: 768px, 
+    lg: 992px, 
+    xl: 1200px, 
+);
+
+$container-sizes: ( sm: 540px, md: 720px, lg: 960px, xl: 1140px, );
+
+$grid-gutter: 30px;
+$columns-count: 12;
+
+$fonts: (
+    default: 'Open Sans',
+    heading: 'Open Sans',
+);
+
+$font-sizes: ( 
+    heading: (xs: 2rem, md: 2.2rem, lg: 2.6rem, xl: 3rem), 
+    subheading: 1rem 1.2rem 1.4rem, 
+    default: 1rem, 
+    small: .8rem
+);
+
+
+
+// call initial mixin
+@include raa-style-base($breakpoints);
+
+// define your colors
+@include define-colors($colors);
+
+//define your fonts
+@include define-fonts($fonts);
+@include define-font-sizes($font-sizes);
+
+//create container and grid
+@include create-container('o-container', $container-sizes, $grid-gutter);
+@include create-grid('o-grid', $columns-count, $grid-gutter);

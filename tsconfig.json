@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "stripInternal": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "baseUrl": "."
+    },
+    "compileOnSave": true,
+    "include": [
+        "**/*"
+    ],
+    "exclude": [
+        "node_modules/*"
+    ]
+}
