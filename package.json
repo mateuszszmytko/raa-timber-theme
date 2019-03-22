@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "@karrot/common": "0.5.0",
     "@karrot/core": "0.5.0",
     "@raa/style-base": "^1.0.1",
+    "babel-loader": "^8.0.5",
     "es6-shim": "^0.35.4",
-    "ts-loader": "^5.3.3",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
@@ -23,7 +26,6 @@
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "typescript": "^3.0.3",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.20.0",
     "webpack-cli": "^3.1.1",

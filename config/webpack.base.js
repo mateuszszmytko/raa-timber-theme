@@ -21,7 +21,6 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.ts?$/, use: "ts-loader" },
             {
 				test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
 				loader: 'file-loader?name=assets/[name].[ext]'
@@ -38,6 +37,23 @@ module.exports = {
                     { loader: 'postcss-loader', options: { sourceMap: true, importLoaders: 1, plugins: () => [autoprefixer({ browsers: ["Explorer >= 11", "last 2 versions"] })] } },
                     { loader: 'sass-loader', options: { sourceMap: true, } }
                 ]
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            [
+                                "@babel/preset-env",
+                                {
+                                  "useBuiltIns": "usage"
+                                }
+                            ]
+                        ],
+                    }
+                }
             }
         ]
     },
