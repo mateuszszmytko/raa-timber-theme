@@ -7,28 +7,25 @@
  * @package  AWT
  */
 
-require 'site.php';
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
+
 class RaaTimberTheme {
 	function __construct() {
-
-
 		add_action( 'after_setup_theme',          array( $this, 'setup' ) );
-		
 		add_filter( 'body_class',                 array( $this, 'body_classes' ) );
-
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-		// add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
-		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-		add_filter('use_block_editor_for_post', '__return_false');
-		
+        add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+        
+        $this->custom_blocks();
 	}
 
 	public function setup() {
+        
 		load_theme_textdomain( 'AWT', get_template_directory() . '/languages' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
@@ -39,7 +36,8 @@ class RaaTimberTheme {
 		
 
 		register_nav_menus( array(
-			'primary'   => __( 'Primary Menu', 'AWT' ),
+            'primary'   => __( 'Primary Menu', 'AWT' ),
+            'footer'    => __( 'Footer menu', 'AWT')
 		) );
 
 		add_theme_support( 'html5', array(
@@ -50,12 +48,45 @@ class RaaTimberTheme {
 			'caption',
 		) );
 
-		add_theme_support( 'customize-selective-refresh-widgets' );	
+        add_theme_support( 'customize-selective-refresh-widgets' );	
+        
+        global $site;
 
-	}
+        $site->init();
+
+    }
+    
+    function custom_blocks() {
+        global $gutenberg_customize;
+        $gutenberg_customize->addBlocks(
+            array(
+                array(
+                    'name'				=> 'section-header',
+                    'title'				=> __('Sekcja - header'),
+                    'icon'				=> 'admin-home', // http://calebserna.com/dashicons-cheatsheet/
+				),
+                array(
+                    'name'				=> 'test-block',
+                    'title'				=> __('Test block'),
+                    'icon'				=> 'format-status', // http://calebserna.com/dashicons-cheatsheet/
+				),
+				
+                /*array(
+                    'name'				=> 'block-name',
+                    'title'				=> __('Block name'),
+                    'description'		=> __('Block description.'),
+                    'icon'				=> 'admin-comments', // http://calebserna.com/dashicons-cheatsheet/
+                    'keywords'			=> array( 'random', 'keywords' ),
+                )*/
+            )
+        );
+    }
 
 	function add_to_context( $context ) {
-		$context['site'] = new Site();
+        global $site;
+
+        $context['options'] = get_fields('options');
+		$context['site'] = $site;
 		return $context;
 	}
 

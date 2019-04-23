@@ -19,6 +19,3 @@ Karrot.attach('test-block', (el) => {
     });
 });
 
-jQuery(() => {
-    console.log('asd');
-});

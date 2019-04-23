@@ -9,17 +9,21 @@ class Site extends TimberSite {
 
 	function __construct() {
 		parent::__construct();
-
-		$id = get_theme_mod( 'custom_logo' );
+    }
+    
+    public function init() {
+        $id = get_theme_mod( 'custom_logo' );
 		$this->logo = new Timber\Image($id);
 
 		$this->menus = (object) array();
 
-		$menus = get_registered_nav_menus();
+        $menus = get_registered_nav_menus();
+        
 		foreach($menus as $location => $desc) {
 			$this->menus->$location = new TimberMenu($location);
-		}
-	}
+        }
+
+    }
 
 	public function get_posts() {
 		$args = array(
@@ -40,4 +44,6 @@ class Site extends TimberSite {
 
 
 }
+
+return new Site();
 ?>

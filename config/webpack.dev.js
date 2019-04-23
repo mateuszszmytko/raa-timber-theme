@@ -10,7 +10,7 @@ module.exports = webpackMerge(baseConfig, {
     devtool: 'source-map',
     plugins: [
         new BrowserSyncPlugin({
-            proxy: 'localhost/wp_theme',
+            proxy: 'http://127.0.0.1/edsa-timber-theme/',
             files: ['./*.php', './views/**/*.twig', './assets/**/*.*'],
         }),
     ]

@@ -16,9 +16,6 @@ endif;
 if ( is_single() ) :
 	$data['page'] = 'single';	
 	$template = array( 'single-' . $post->ID. '.twig', 'single-' . $post->post_type. '.twig', 'single.twig' );
-elseif ( is_front_page() ) :
-	$data['page'] = 'home';
-	$template = array('home.twig' );
 elseif ( is_page() ) :
 	$data['page'] = 'page';	
 	$template = array( 'page-' . $post->post_name. '.twig', 'page.twig' );

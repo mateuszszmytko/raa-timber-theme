@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+.block-editor {
+    @import '@raa/style-base';
+    @import 'settings/__settings';
+    @import 'tools/__tools';
+    @import 'vendors/__vendors';
+    @import 'objects/__objects';
+    @import 'elements/__elements';
+    @import 'components/__components';
+    @import 'patterns/__patterns';
+    @import 'utilities/__utilities';
+
+    * {
+        outline: none;
+        box-sizing: border-box;
+    }
+    @include raa-style-base($breakpoints);
+    @include define-colors($colors);
+
+    //define your fonts
+    @include define-fonts($fonts);
+    @include define-font-sizes($font-sizes);
+
+    //create container and grid
+    @include create-container( 'o-container', $container-sizes, 30px);
+    @include create-grid( 'o-grid', 12, 30px);
+
+}
+
+
+.editor-post-title__block .editor-post-title__input,
+.edit-post-visual-editor, .edit-post-visual-editor p {
+	font-family: "Open Sans", sans-serif;
+}
+
+.editor-post-title__block .editor-post-title__input {
+	font-size: 42px;
+	font-weight: 400;
+	line-height: 50px;
+	text-align: center;
+}
+
+.edit-post-visual-editor, .edit-post-visual-editor p,
+.editor-rich-text__tinymce.mce-content-body {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.wp-block {
+    max-width: 100%;
+}
+

@@ -21,7 +21,10 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 
 
-Timber::$dirname = array('views/templates', 'views/layouts', 'views/partials');
+Timber::$dirname = array('views/templates', 'views/layouts', 'views/partials', 'views/blocks');
+
+$site = require_once 'inc/site.php';
+$gutenberg_customize = require_once 'inc/gutenberg-customize/gutenberg-customize.php';
 
 require 'inc/template-hooks.php';
 require 'inc/template-functions.php';

@@ -1,0 +1,22 @@
+<div class="c-test-block">
+    <h2 class="c-test-block__title">{{data.name}}</h2>
+    <div class="o-grid">
+        {% for message in data.messages %}
+            <div class="o-grid__item md-4">
+                <div class="c-test-block__item">
+                    <p>{{ message.text | t}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="o-grid">
+        {% for post in site.get_posts %}
+            <div class="o-grid__item md-4">
+                <div class="c-test-block__item jsClick" k-item="test-block">
+                    <p>{{ post.title }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

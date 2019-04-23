@@ -7,6 +7,7 @@ module.exports = {
     entry: {
         polyfills: './src/polyfills.js',
         main: './src/page.js',
+        'block-editor': './src/block-editor.js',
     },
     
     output: {
@@ -39,7 +40,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.m?js$/,
+                test: /\.m?(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
@@ -50,7 +51,8 @@ module.exports = {
                                 {
                                   "useBuiltIns": "usage"
                                 }
-                            ]
+                            ],
+                            '@babel/preset-react'
                         ],
                     }
                 }

@@ -1,10 +1,10 @@
 {% extends '_default.twig' %}
 
 {% block nav %}
-	<nav class="c-main-nav">
+	<nav class="p-nav">
 		<div class="o-container">
 			<div class="o-grid u-align-center">
-				<div class="o-grid__item sm-4">
+				<div class="o-grid__item lg-4">
 					<a href="{{site.url}}" class="o-logo">
 						{% if site.logo.src != null %}
 							<img src="{{site.logo.src('medium')}}" alt="{{site.name}}">
@@ -13,10 +13,10 @@
 						{% endif %}
 					</a>
 				</div>
-				<div class="o-grid__item sm-8">
+				<div class="o-grid__item lg-8">
 					<ul class="c-menu">
 						{% for menuItem in site.menus.primary.items %}
-							<li><a href="{{menuItem.link}}" class="c-menu__link">{{menuItem.title}}</a></li>
+							<li><a href="{{menuItem.link}}" class="c-menu__link {{menuItem.classes | join(' ')}}">{{menuItem.title}}</a></li>
 						{% endfor %}
 					</ul>
 				</div>
@@ -26,25 +26,10 @@
 {% endblock %}
 
 {% block header %}
-	<section class="c-page__header {% block header_class %} {% endblock %}">
-		<div class="o-container">
-			{% block header_in %}
-				<h1>{{ post.title }}</h1>
-			{% endblock %}
-		</div>
-	</section>
 {% endblock %}
 
 {% block content %}
-	<section class="c-page__section {% block content_class %} {% endblock %}">
-		<div class="o-container">
-			{% block content_in %}
-				<div>
-					{{post.content}}
-				</div>
-			{% endblock %}
-		</div>
-	</section>
+    {{post.content}}
 {% endblock %}
 
 {% block footer %}
