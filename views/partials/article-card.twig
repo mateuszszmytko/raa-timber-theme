@@ -1,5 +1,6 @@
-<article class="article">
-	<h2 class="article__title">{{ post.title }}</h2>
-	<p><strong>{{ post.subtitle }}</strong></p>
-	<p class="article__preview">{{ post.preview.length(20) }}</p>
+<article class="c-article-card">
+	<h2 class="c-article-card__title">
+        <a href="{{post.link}}">{{ post.title }}</a>
+    </h2>
+	<p class="c-article-card__preview">{{ post.preview.length(20) }}</p>
 </article>

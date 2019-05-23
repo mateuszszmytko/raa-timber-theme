@@ -20,19 +20,38 @@
 	{{fn('wp_head')}}
 </head>
 
-<body {{fn('body_class')}} @app>
-	{% block nav %}{% endblock %}
+<body {{fn('body_class')}} k-item="site">
+	{% block nav %}
+        {% include "navigation.twig" %}
+    {% endblock %}
 
-	<main class="c-page">
-		{% block header %}{% endblock %}
-		{% block content %}	{% endblock %}
+	<main class="p-page">
+		{% block content_above %}	
+            {% for section in content_before.sections %}
+                {% include ['section-' ~ section.acf_fc_layout ~ '.twig', 'section.twig'] %}
+            {% endfor %}
+        {% endblock %}
+
+        {% block content %}	
+            {% for section in fields.sections %}
+                {% include ['section-' ~ section.acf_fc_layout ~ '.twig', 'section.twig'] %}
+            {% endfor %}
+        {% endblock %}
+
+        {% block content_below %}	
+            {% for section in content_after.sections %}
+                {% include ['section-' ~ section.acf_fc_layout ~ '.twig', 'section.twig'] %}
+            {% endfor %}
+        {% endblock %}
 	</main>
 
-	{% block footer %}{% endblock %}
+	{% block footer %}
+        {% include "footer.twig" %}
+    {% endblock %}
 
 	{{fn('wp_footer')}}
-	<script src="{{'plugins.js' | static_url}}"></script>
-	<script src="{{'main.js' | static_url}}"></script>
+	<script src="{{'plugins.js' | static_url }}"></script>
+	<script src="{{'main.js' | static_url }}"></script>
 	
 </body>
 </html>

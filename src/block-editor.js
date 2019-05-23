@@ -1,4 +1,4 @@
 import './styles/block-editor.scss';
-import './scripts/main.js';
 
+// blocks
 import './blocks/empty-section.jsx';

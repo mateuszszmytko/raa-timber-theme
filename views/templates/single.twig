@@ -1,9 +1,12 @@
 {% extends 'base.twig' %}
 
-{% block header_in %}
-	<h1>{{post.title}}</h1>
-{% endblock %}
-
 {% block content %}
-	{{post.content}}
+	<section class="o-section p-article">
+        <div class="o-container">
+            <h1 class="p-article__title">{{post.title}}</h1>
+            <div class="p-article__content">
+                {{post.content}}
+            </div>
+        </div>
+    </section>
 {% endblock %}

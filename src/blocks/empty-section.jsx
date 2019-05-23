@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
@@ -11,7 +12,7 @@ registerBlockType( 'raa/empty-layout', {
 		__( 'raa' ),
 	],
 
-	edit: function( props ) {
+	edit: function() {
 		return (
 			<section class="o-section">
                 <div className="o-container">
@@ -21,7 +22,7 @@ registerBlockType( 'raa/empty-layout', {
 		);
 	},
 
-	save: function( props ) {
+	save: function() {
 		return (
 			<section class="o-section">
                 <div className="o-container">

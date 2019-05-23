@@ -1,6 +1,7 @@
 const path = require('path'),
     MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-    autoprefixer = require('autoprefixer');
+    autoprefixer = require('autoprefixer'),
+    MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally');
 
 module.exports = {
     devtool: 'source-map',
@@ -63,6 +64,16 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
-        })
+        }),
+        new MergeIntoSingleFilePlugin({
+            files: {
+                "vendors.js": [
+                    './src/scripts/vendors/*',
+                ]
+            },
+            transform: {
+                'vendors.js': code => require("uglify-js").minify(code).code
+            }
+        }),
     ]
 };

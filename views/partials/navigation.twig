@@ -1,0 +1,24 @@
+<nav class="p-nav">
+    <div class="o-container">
+        <div class="o-grid o-grid--align-center">
+            <div class="o-grid__item lg-4">
+                <a href="{{site.url}}" class="c-logo">
+                    {% if site.logo.src != null %}
+                        <img src="{{site.logo.src('medium')}}" alt="{{site.name}}">
+                    {% else %}
+                        {{site.name}}
+                    {% endif %}
+                </a>
+            </div>
+            <div class="o-grid__item lg-8">
+                <ul class="c-menu">
+                    {% for menuItem in site.menus.primary.items %}
+                        <li>
+                            <a href="{{menuItem.link}}" class="c-menu__link {{menuItem.classes | join(' ')}}">{{menuItem.title}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,12 +1,10 @@
 <?php
 /**
- * AWT functions and definitions
+ * RTT functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package RaaTimberTheme
  */
-
 
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
@@ -20,16 +18,18 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
-
-Timber::$dirname = array('views/templates', 'views/layouts', 'views/partials', 'views/blocks');
+/**
+ * Define twig files paths
+ */
+Timber::$dirname = array('views/templates', 'views/sections', 'views/layouts', 'views/partials', 'views/blocks');
 
 $site = require_once 'inc/site.php';
-$gutenberg_customize = require_once 'inc/gutenberg-customize/gutenberg-customize.php';
 
-require 'inc/template-hooks.php';
+require 'inc/gutenberg-blocks.php';
 require 'inc/template-functions.php';
+require 'inc/twig-extends.php';
 
-require 'inc/raa-timber-theme.php';
+require 'raa-timber-theme.php';
 
 
 

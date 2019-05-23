@@ -20,19 +20,23 @@ elseif ( is_page() ) :
 	$data['page'] = 'page';	
 	$template = array( 'page-' . $post->post_name. '.twig', 'page.twig' );
 elseif ( is_category() ) :
-	$data['archive_title'] = get_cat_name( get_query_var('cat') );
-	$data['archive_description'] = term_description();
+	$data['term'] = new Timber\Term();
 	$data['page'] = 'archive';
-	$template = array('archive.twig' );
+    $template = array( 'archive-' . get_query_var('tag_id') . '.twig', 'archive.twig' );
 elseif ( is_tag() ) :
-	$data['archive_title'] = get_term_name( get_query_var('tag_id') );
-	$data['archive_description'] = term_description();
+    $data['term'] = new Timber\Term();
 	$data['page'] = 'archive';
-	$template = array('archive.twig' );
+    $template = array( 'archive-' . get_query_var('tag_id') . '.twig', 'archive.twig' );
 elseif ( is_author() ) :
 	$data['archive_title'] = get_the_author();
 	$data['page'] = 'archive';
-	$template = array('archive.twig' );	
+    $template = array('archive.twig' );	
+elseif ( is_search() ):
+    $data['page'] = 'archive';
+    $template = array('archive.twig' );
+elseif ( is_archive() ) :
+    $data['page'] = 'archive';
+    $template = array( 'archive-' . get_queried_object()->name . '.twig', 'archive.twig' );
 else: 
 	$data['page'] = '404';
 	$template = array('404.twig' );

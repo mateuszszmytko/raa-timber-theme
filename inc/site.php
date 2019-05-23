@@ -11,7 +11,7 @@ class Site extends TimberSite {
 		parent::__construct();
     }
     
-    public function init() {
+    public function initSite() {
         $id = get_theme_mod( 'custom_logo' );
 		$this->logo = new Timber\Image($id);
 
@@ -25,12 +25,12 @@ class Site extends TimberSite {
 
     }
 
-	public function get_posts() {
+	public function get_posts($count = -1) {
 		$args = array(
 			'post_type' 	=> 'post',
 			'orderby'		=> 'meta_value_num',
 			'order'			=> 'DESC',
-			'posts_per_page' => -1,
+			'posts_per_page' => $count,
 		);
 
 		return new Timber\PostQuery($args);
@@ -41,8 +41,6 @@ class Site extends TimberSite {
 
 		return new Timber\Image($directory);
 	}
-
-
 }
 
 return new Site();
