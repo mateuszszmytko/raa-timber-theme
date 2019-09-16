@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Raa Timber Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-10 21:36+0000\n"
+"POT-Creation-Date: 2019-05-25 14:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,50 +15,38 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.2.2; wp-5.1.1"
 
-#. Name of the template
-msgid "Custom template"
-msgstr ""
-
-#: inc/template-functions.php:18
-msgid "Dodatkowa treść poniżej"
-msgstr ""
-
-#: inc/template-functions.php:10
-msgid "Dodatkowa treść powyżej"
-msgstr ""
-
-#: raa-timber-theme.php:38
-msgid "Footer menu"
-msgstr ""
-
-#. Name of the template
-msgid "Home template"
-msgstr ""
-
-#. URI of the theme
-msgid "https://github.com/mateuszszmytko/raa-timber-theme"
-msgstr ""
-
-#. Author URI of the theme
-msgid "https://mateusz-szmytko.pl"
-msgstr ""
-
-#. Author of the theme
-msgid "Mateusz @Raa Szmytko"
+#: raa-timber-theme.php:36
+msgid "Primary Menu"
 msgstr ""
 
 #: raa-timber-theme.php:37
-msgid "Primary Menu"
+msgid "Footer menu"
+msgstr ""
+
+#: inc/gutenberg-blocks.php:72
+msgid "Custom blocks"
+msgstr ""
+
+#: inc/template-functions.php:10 inc/template-functions.php:11
+msgid "Content above"
+msgstr ""
+
+#: inc/template-functions.php:18 inc/template-functions.php:19
+msgid "Content below"
 msgstr ""
 
 #. Name of the theme
 msgid "Raa Timber Theme"
 msgstr ""
 
-#: inc/template-functions.php:19
-msgid "Treść poniżej"
+#. URI of the theme
+msgid "https://github.com/mateuszszmytko/raa-timber-theme"
 msgstr ""
 
-#: inc/template-functions.php:11
-msgid "Treść powyżej"
+#. Author of the theme
+msgid "Mateusz @Raa Szmytko"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://mateusz-szmytko.pl"
 msgstr ""

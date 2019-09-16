@@ -46,26 +46,6 @@ add_filter('raa/acfBlocks', function($blocks) {
 });
 
 /**
- * Example usage of custom blocks in ACF.
- * 
- */
-add_filter('raa/acfBlocks', function($blocks) {
-    $blocks[] = array(
-        'name' => 'test-block',
-        'title'	=> __('Test block'),
-        'icon' => 'format-status', // http://calebserna.com/dashicons-cheatsheet/
-    );
-
-    $blocks[] = array(
-        'name' => 'test-block-2',
-        'title'	=> __('Test block 2'),
-        'icon' => 'format-status', // http://calebserna.com/dashicons-cheatsheet/
-    );
-
-    return $blocks;
-});
-
-/**
  * Disable gutenberg blocks on page post type.
  * 
  */

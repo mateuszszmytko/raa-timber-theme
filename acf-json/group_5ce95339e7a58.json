@@ -1,9 +1,9 @@
 {
-    "key": "group_5cd5f4d86c37f",
-    "title": "Sections",
+    "key": "group_5ce95339e7a58",
+    "title": "Test",
     "fields": [
         {
-            "key": "field_5cd5f53273771",
+            "key": "field_5ce953b900d30",
             "label": "Sections",
             "name": "sections",
             "type": "flexible_content",
@@ -16,14 +16,14 @@
                 "id": ""
             },
             "layouts": {
-                "layout_5cd5f53e43daa": {
-                    "key": "layout_5cd5f53e43daa",
-                    "name": "basic",
-                    "label": "Section: Basic section",
+                "layout_5ce953c99aeb4": {
+                    "key": "layout_5ce953c99aeb4",
+                    "name": "test",
+                    "label": "Test",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5cd5f58173772",
+                            "key": "field_5ce953ce00d31",
                             "label": "Title",
                             "name": "title",
                             "type": "text",
@@ -42,7 +42,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5cd5f58b73773",
+                            "key": "field_5ce954e3dd1e4",
                             "label": "Text",
                             "name": "text",
                             "type": "wysiwyg",
@@ -65,7 +65,7 @@
                     "max": ""
                 }
             },
-            "button_label": "Add section",
+            "button_label": "Dodaj wiersz",
             "min": "",
             "max": ""
         }
@@ -73,23 +73,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "default"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "page-content-before"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "page-content-after"
+                "value": "post"
             }
         ]
     ],
@@ -101,5 +87,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1557532592
+    "modified": 1558795604
 }
