@@ -3,7 +3,6 @@ import { FormAjax, FormValidation, ScrollTo } from '@karrot/common';
 
 import { Site } from "./site";
 
-Karrot.init();
 Karrot.attach('my-form', FormAjax, FormValidation);
 Karrot.attach('link', ScrollTo);
 Karrot.attach('site', Site);
